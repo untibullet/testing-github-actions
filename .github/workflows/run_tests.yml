@@ -7,9 +7,9 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: Install Python
-        uses: setup-python@v4
+        uses: actions/setup-python@v4
         with:
           python-version: "3.11"
       - name: Run all tests
