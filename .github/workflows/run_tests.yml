@@ -13,4 +13,5 @@ jobs:
         with:
           python-version: "3.11"
       - name: Run all tests
-        run: python3 run_test.py
+        run: |
+            python3 run_test.py
