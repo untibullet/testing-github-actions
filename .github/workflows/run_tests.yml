@@ -1,0 +1,16 @@
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout
+      - name: Install Python
+        uses: setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Run all tests
+        run: python3 run_test.py
