@@ -1,9 +1,15 @@
 """
-In this file we have one functional element as fibonacci function.
+@file main.py
+@brief Пример модуля для пробного использования некоторых сервисов GitHub и системы документирования кода Doxygen
 """
 
 
 def fibonacci(n):
+    """
+    @brief Показательная функция для осуществления некоторой логики. Вычисляет число Фибоначчи
+    @param Порядковый номер в последовательности Фибоначчи
+    @return Возвращает вычисленное число Фибоначчи
+    """
     if n in (1, 2):
         return 1
     return fibonacci(n - 1) + fibonacci(n - 2)
