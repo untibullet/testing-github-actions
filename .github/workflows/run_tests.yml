@@ -29,9 +29,9 @@ jobs:
       - name: Set up Doxygen
         run: sudo apt-get install doxygen
 
-      - name: Checkout to gh-pages
+      - name: Switch to gh-pages
         run: |
-          git checkout gh-pages
+          git switch gh-pages
 
       - name: Generate Documentation
         run: doxygen Doxyfile
