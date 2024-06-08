@@ -8,9 +8,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
+
       - name: Run all tests
         run: python3 run_tests.py
+
+  generate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Doxygen
+        run: sudo apt-get install doxygen
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile
