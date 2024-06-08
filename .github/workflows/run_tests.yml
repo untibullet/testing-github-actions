@@ -31,6 +31,7 @@ jobs:
 
       - name: Switch to gh-pages
         run: |
+          git branch
           git switch gh-pages
 
       - name: Generate Documentation
