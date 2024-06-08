@@ -29,3 +29,16 @@ jobs:
 
       - name: Generate Documentation
         run: doxygen Doxyfile
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and Push changes
+        run: |
+            git add ./docs
+            git commit -m "Update Doxygen documentation"
+            git push
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
