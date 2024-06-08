@@ -1,5 +1,7 @@
 on:
   push:
+    branches:
+      - master
 
 jobs:
   test:
@@ -26,6 +28,10 @@ jobs:
 
       - name: Set up Doxygen
         run: sudo apt-get install doxygen
+
+      - name: Checkout to gh-pages
+        run: |
+          git checkout gh-pages
 
       - name: Generate Documentation
         run: doxygen Doxyfile
